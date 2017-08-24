@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var router = require('./routes.js');
 var app = express();
+var database = process.env.MONGODB_URI || 'mongodb://localhost:27017/test'
 app.engine('handlebars', handlebars({'defaultLayout': 'main'}));
 app.set('view engine', 'handlebars');
 app.use(bodyParser.urlencoded({extended: false}))
