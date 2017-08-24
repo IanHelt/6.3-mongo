@@ -3,8 +3,10 @@ var Todo = require('../models/todo');
 
 var TodoController = {
   list: function(req, res){
-    todo.find();
-    res.render('todo/list', {});
+    Todo.find().then(function(todos){
+        res.render('todo/list', {todos: todos});
+    });
+
 
   },
   add: function(req, res) {
@@ -17,6 +19,12 @@ var TodoController = {
 
       res.redirect('/todo');
     });
+  },
+  delete: function(req, res) {
+    var todoId = req.params.id;
+    todo.deleteOne({"_id": todoID}).then(function() {
+      res.redirect('/todo');
+    })
   }
 };
 

@@ -8,7 +8,6 @@ module.exports = function(app){
   var todoRouter = express.Router();
 
   brochureRouter.get('/', BrochureController.home);
-
   todoRouter.get('/', TodoController.list);
   todoRouter.post('/', TodoController.add);
   todoRouter.get('/:id/delete'), TodoController.delete;
