@@ -1,0 +1,14 @@
+<h1>Things Todo!</h1>
+<div class="well">
+  <form class="" action="/todo" method="post">
+    <input type="text" name="title" placeholder="Todo Title">
+    <input type="submit" class="btn btn-primary btn-lg" name="" value="Add Todo"/>
+  </form>
+</div>
+<ul>
+
+{{#each todos}}
+<li>{{title}}</li>
+{{/each}}
+
+</ul>
